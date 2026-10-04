@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recupere propostas paradas da sua integradora solar | Revenue Recovery Sprint</title>
+<meta name="description" content="Antes de comprar novos leads, descubra quanto dinheiro pode estar parado nas propostas que sua empresa já gerou. Sprint de 72 horas por R$ 1.497.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { bg:'#0B0D0C', surf:'#141816', line:'#27302B', vol:'#2BE37D', volDark:'#1FC468', mute:'#9AA7A0' },
+  fontFamily: { head:['Sora','system-ui','sans-serif'], body:['system-ui','-apple-system','Segoe UI','Roboto','sans-serif'] }
+}}}
+</script>
+<style type="text/tailwindcss">
+  @layer components {
+    .btn { @apply inline-block text-center font-bold rounded-md px-6 py-4 text-base transition-colors; }
+    .btn-p { @apply btn bg-vol text-bg hover:bg-volDark; }
+    .btn-s { @apply btn border border-line text-white hover:border-vol; }
+    .card { @apply bg-surf border border-line rounded-lg p-6; }
+    .h2 { @apply font-head font-bold text-3xl md:text-4xl leading-tight; }
+    .sec { @apply max-w-5xl mx-auto px-5 py-16 md:py-20; }
+    .field { @apply w-full bg-bg border border-line rounded-md px-3 py-3 text-white placeholder-mute focus:border-vol; }
+    .lbl { @apply block text-sm font-bold text-white mb-1; }
+  }
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  :focus-visible{outline:3px solid #2BE37D;outline-offset:2px}
+  details>summary{list-style:none;cursor:pointer}
+  details>summary::-webkit-details-marker{display:none}
+  details[open] .plus{transform:rotate(45deg)}
+  body{overflow-x:hidden}
+</style>
+</head>
+<body class="bg-bg text-white font-body antialiased">
+<a href="#diagnostico" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-3 focus:bg-vol focus:text-bg">Ir para o formulário</a>
+
+<header class="border-b border-line">
+  <div class="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between gap-3">
+    <span class="font-head font-bold">Solar Revenue Recovery</span>
+    <a href="#diagnostico" class="btn-p !py-2 !px-4 !text-sm">Analisar minha base</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="sec !pt-12 md:!pt-20">
+  <h1 class="font-head font-extrabold text-4xl md:text-6xl leading-[1.05] max-w-3xl">Quantas propostas sua integradora enviou e nunca mais acompanhou?</h1>
+  <p class="mt-6 text-lg md:text-xl text-mute max-w-2xl">Recuperamos oportunidades comerciais esquecidas usando a própria base de leads e propostas da sua empresa — sem precisar comprar novos leads.</p>
+  <div class="mt-8 flex flex-col sm:flex-row gap-3 max-w-xl">
+    <a href="#diagnostico" class="btn-p">QUERO ANALISAR MINHA BASE</a>
+    <a href="#diagnostico" data-whatsapp class="btn-s">FALAR COM UM ESPECIALISTA</a>
+  </div>
+  <p class="mt-5 text-sm text-mute"><span class="text-vol" aria-hidden="true">✓</span> Operação inicial conduzida de forma personalizada.</p>
+</section>
+
+<!-- PROBLEMA -->
+<section class="border-y border-line bg-surf">
+  <div class="sec">
+    <h2 class="h2 max-w-3xl">Você talvez esteja procurando novos leads antes de aproveitar os que já pagou para adquirir.</h2>
+    <ol class="mt-10 flex flex-col md:flex-row md:items-stretch gap-2 md:gap-0" aria-label="Caminho de uma oportunidade que se perde">
+      <li class="flex-1 bg-bg border border-line rounded-lg p-4 text-center font-bold">Lead</li>
+      <li class="text-vol text-center md:self-center md:px-2" aria-hidden="true"><span class="md:hidden">↓</span><span class="hidden md:inline">→</span></li>
+      <li class="flex-1 bg-bg border border-line rounded-lg p-4 text-center font-bold">Proposta</li>
+      <li class="text-vol text-center md:self-center md:px-2" aria-hidden="true"><span class="md:hidden">↓</span><span class="hidden md:inline">→</span></li>
+      <li class="flex-1 bg-bg border border-line rounded-lg p-4 text-center font-bold">“Vou pensar”</li>
+      <li class="text-vol text-center md:self-center md:px-2" aria-hidden="true"><span class="md:hidden">↓</span><span class="hidden md:inline">→</span></li>
+      <li class="flex-1 bg-bg border border-line rounded-lg p-4 text-center font-bold">Sem follow-up</li>
+      <li class="text-vol text-center md:self-center md:px-2" aria-hidden="true"><span class="md:hidden">↓</span><span class="hidden md:inline">→</span></li>
+      <li class="flex-1 border border-vol rounded-lg p-4 text-center font-bold text-vol">Oportunidade perdida</li>
+    </ol>
+    <p class="mt-8 text-lg text-mute max-w-3xl">O problema não necessariamente é falta de leads. Pode ser falta de acompanhamento. As oportunidades ficam espalhadas em WhatsApp, planilhas, CRM, propostas antigas, clientes que pararam de responder e negócios travados por preço ou financiamento.</p>
+  </div>
+</section>
+
+<!-- MATEMÁTICA -->
+<section id="calculadora" class="sec">
+  <h2 class="h2">A matemática do que pode estar parado</h2>
+  <p class="mt-4 text-mute max-w-2xl">Propostas paradas × ticket médio × taxa de recuperação estimada.</p>
+  <div class="mt-8 grid md:grid-cols-2 gap-6">
+    <div class="card space-y-4">
+      <div><label class="lbl" for="c-props">Número de propostas paradas</label><input id="c-props" type="number" min="0" inputmode="numeric" value="100" class="field"></div>
+      <div><label class="lbl" for="c-ticket">Ticket médio (R$)</label><input id="c-ticket" type="number" min="0" inputmode="numeric" value="25000" class="field"></div>
+      <div><label class="lbl" for="c-rate">Taxa de recuperação estimada (%)</label><input id="c-rate" type="number" min="0" max="100" step="0.5" inputmode="decimal" value="2" class="field"></div>
+    </div>
+    <div class="card flex flex-col justify-center" aria-live="polite">
+      <p class="text-mute text-sm">Valor potencial recuperável</p>
+      <p id="c-result" class="font-head font-extrabold text-4xl md:text-5xl text-vol mt-2 break-words">R$ 50.000</p>
+      <p class="mt-3 text-mute">Com 100 propostas × R$ 25.000 × 2%.</p>
+      <p class="mt-5 text-xs text-mute border-t border-line pt-4">Isto é uma simulação matemática com valores que você mesmo define. Não é promessa nem estimativa de resultado. O desempenho real depende da base, da oferta e do time comercial de cada empresa.</p>
+    </div>
+  </div>
+  <a href="#diagnostico" class="btn-p mt-8">QUERO ANALISAR MINHA BASE</a>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="border-y border-line bg-surf">
+  <div class="sec">
+    <h2 class="h2">Como funciona</h2>
+    <ol class="mt-8 grid md:grid-cols-3 gap-6">
+      <li class="bg-bg border border-line rounded-lg p-6"><span class="font-head font-bold text-vol text-2xl">1</span><h3 class="font-head font-bold text-xl mt-2">Você entrega a base</h3><p class="mt-2 text-mute">Você envia a base de leads e propostas que sua empresa já possui.</p></li>
+      <li class="bg-bg border border-line rounded-lg p-6"><span class="font-head font-bold text-vol text-2xl">2</span><h3 class="font-head font-bold text-xl mt-2">Nós organizamos e segmentamos</h3><p class="mt-2 text-mute">Classificamos as oportunidades e identificamos quais merecem uma nova abordagem.</p></li>
+      <li class="bg-bg border border-line rounded-lg p-6"><span class="font-head font-bold text-vol text-2xl">3</span><h3 class="font-head font-bold text-xl mt-2">Reativamos e entregamos</h3><p class="mt-2 text-mute">Executamos o processo de reativação e entregamos os contatos interessados para sua equipe comercial.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- SPRINT -->
+<section class="sec">
+  <h2 class="h2 max-w-3xl">Em 72 horas, transformamos uma base desorganizada em uma operação comercial estruturada.</h2>
+  <ul class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-lg">
+    <li><span class="text-vol" aria-hidden="true">✓</span> Higienização da base</li>
+    <li><span class="text-vol" aria-hidden="true">✓</span> Classificação dos contatos</li>
+    <li><span class="text-vol" aria-hidden="true">✓</span> Segmentação</li>
+    <li><span class="text-vol" aria-hidden="true">✓</span> Scripts personalizados</li>
+    <li><span class="text-vol" aria-hidden="true">✓</span> Sequências de reativação</li>
+    <li><span class="text-vol" aria-hidden="true">✓</span> Monitoramento das respostas</li>
+    <li><span class="text-vol" aria-hidden="true">✓</span> Identificação das oportunidades</li>
+    <li><span class="text-vol" aria-hidden="true">✓</span> Relatório final</li>
+  </ul>
+</section>
+
+<!-- O QUE RECEBE -->
+<section class="border-y border-line bg-surf">
+  <div class="sec">
+    <h2 class="h2">O que você recebe</h2>
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-bg border border-line rounded-lg p-5"><h3 class="font-bold">Base organizada</h3><p class="mt-1 text-sm text-mute">Contatos limpos, sem duplicados, com status claro.</p></div>
+      <div class="bg-bg border border-line rounded-lg p-5"><h3 class="font-bold">Lead scoring</h3><p class="mt-1 text-sm text-mute">Nota por recência, valor e sinais de interesse.</p></div>
+      <div class="bg-bg border border-line rounded-lg p-5"><h3 class="font-bold">Scripts de reativação</h3><p class="mt-1 text-sm text-mute">Mensagens para cada motivo de a conversa ter parado.</p></div>
+      <div class="bg-bg border border-line rounded-lg p-5"><h3 class="font-bold">Sequências comerciais</h3><p class="mt-1 text-sm text-mute">Ordem e intervalo das abordagens, com condição de parada.</p></div>
+      <div class="bg-bg border border-line rounded-lg p-5"><h3 class="font-bold">HOT / WARM / COLD</h3><p class="mt-1 text-sm text-mute">Quem abordar primeiro e quem deixar de fora.</p></div>
+      <div class="bg-bg border border-line rounded-lg p-5"><h3 class="font-bold">Lista de oportunidades</h3><p class="mt-1 text-sm text-mute">Contatos que responderam, prontos para seu time.</p></div>
+      <div class="bg-bg border border-line rounded-lg p-5"><h3 class="font-bold">Relatório de resultados</h3><p class="mt-1 text-sm text-mute">O que foi feito, as respostas e os números.</p></div>
+      <div class="bg-bg border border-line rounded-lg p-5"><h3 class="font-bold">Recomendações de follow-up</h3><p class="mt-1 text-sm text-mute">Próximos passos para sua equipe continuar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PREÇO -->
+<section id="preco" class="sec">
+  <div class="card md:p-10 max-w-2xl mx-auto text-center border-vol">
+    <p class="text-mute">Revenue Recovery Sprint</p>
+    <p class="font-head font-extrabold text-5xl md:text-6xl text-vol mt-2">R$ 1.497</p>
+    <p class="mt-4">Pagamento via Pix.</p>
+    <p class="text-mute">Execução em 72 horas após o recebimento e a validação da base.</p>
+    <a href="#diagnostico" class="btn-p mt-8 w-full sm:w-auto">QUERO FAZER O SPRINT</a>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="border-y border-line bg-surf">
+  <div class="sec grid md:grid-cols-2 gap-8">
+    <div>
+      <h2 class="font-head font-bold text-2xl">É para</h2>
+      <ul class="mt-4 space-y-3">
+        <li><span class="text-vol" aria-hidden="true">✓</span> Integradoras com base de leads e propostas</li>
+        <li><span class="text-vol" aria-hidden="true">✓</span> Empresas que já possuem operação comercial</li>
+        <li><span class="text-vol" aria-hidden="true">✓</span> Empresas com propostas sem fechamento</li>
+        <li><span class="text-vol" aria-hidden="true">✓</span> Quem quer vender mais sem depender só de novos leads</li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="font-head font-bold text-2xl">Não é para</h2>
+      <ul class="mt-4 space-y-3 text-mute">
+        <li><span aria-hidden="true">✕</span> Empresas sem histórico comercial</li>
+        <li><span aria-hidden="true">✕</span> Empresas sem base de contatos</li>
+        <li><span aria-hidden="true">✕</span> Quem procura promessa de vendas garantidas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec">
+  <h2 class="h2">Perguntas frequentes</h2>
+  <div class="mt-8 max-w-3xl divide-y divide-line border-y border-line">
+    <details class="py-4"><summary class="flex justify-between gap-4 font-bold">Preciso comprar novos leads?<span class="plus transition-transform text-2xl leading-none text-vol" aria-hidden="true">+</span></summary><p class="mt-3 text-mute">Não. O Sprint trabalha com a base que sua empresa já tem. Se a base for pequena demais ou estiver incompleta, avisamos antes de começar.</p></details>
+    <details class="py-4"><summary class="flex justify-between gap-4 font-bold">Vocês precisam acessar meu CRM?<span class="plus transition-transform text-2xl leading-none text-vol" aria-hidden="true">+</span></summary><p class="mt-3 text-mute">Não necessariamente. Em geral basta uma exportação da base (planilha). Você escolhe o que compartilhar, e pedimos só os dados necessários.</p></details>
+    <details class="py-4"><summary class="flex justify-between gap-4 font-bold">Vocês garantem vendas?<span class="plus transition-transform text-2xl leading-none text-vol" aria-hidden="true">+</span></summary><p class="mt-3 text-mute">Não. Nenhum resultado é garantido. O objetivo é identificar e reativar oportunidades e gerar contatos qualificados para o seu time comercial.</p></details>
+    <details class="py-4"><summary class="flex justify-between gap-4 font-bold">Como funciona a análise da base?<span class="plus transition-transform text-2xl leading-none text-vol" aria-hidden="true">+</span></summary><p class="mt-3 text-mute">Removemos duplicados e contatos inválidos, e classificamos cada oportunidade por recência da proposta, valor e sinais de interesse, em HOT, WARM ou COLD. Quem pediu para não ser contatado fica de fora.</p></details>
+    <details class="py-4"><summary class="flex justify-between gap-4 font-bold">Quanto tempo demora?<span class="plus transition-transform text-2xl leading-none text-vol" aria-hidden="true">+</span></summary><p class="mt-3 text-mute">72 horas após o recebimento e a validação da base. Se a base chegar incompleta, o prazo começa quando ela estiver adequada.</p></details>
+    <details class="py-4"><summary class="flex justify-between gap-4 font-bold">Como funciona o pagamento?<span class="plus transition-transform text-2xl leading-none text-vol" aria-hidden="true">+</span></summary><p class="mt-3 text-mute">O valor é R$ 1.497, pago via Pix. Os detalhes são combinados na conversa de diagnóstico, antes de qualquer cobrança.</p></details>
+    <details class="py-4"><summary class="flex justify-between gap-4 font-bold">Vocês enviam mensagens automaticamente?<span class="plus transition-transform text-2xl leading-none text-vol" aria-hidden="true">+</span></summary><p class="mt-3 text-mute">Não fazemos disparo em massa. As mensagens são personalizadas por segmento e aprovadas por você antes do envio, e quem pede para parar entra numa lista de não contatar.</p></details>
+    <details class="py-4"><summary class="flex justify-between gap-4 font-bold">Como funciona a questão de LGPD?<span class="plus transition-transform text-2xl leading-none text-vol" aria-hidden="true">+</span></summary><p class="mt-3 text-mute">O uso da base deve observar a legislação aplicável, incluindo a LGPD. A empresa cliente deve validar sua base legal e seus procedimentos de contato, de preferência com assessoria jurídica. Nós não oferecemos aconselhamento jurídico, e trabalhamos com registro de origem, histórico e opt-out.</p></details>
+  </div>
+</section>
+
+<!-- CTA FINAL + FORM -->
+<section id="diagnostico" class="border-t border-line bg-surf">
+  <div class="max-w-3xl mx-auto px-5 py-16 md:py-20">
+    <h2 class="h2">Antes de gastar mais com novos leads, descubra o que já está escondido na sua base.</h2>
+    <p class="mt-3 text-mute">Preencha o diagnóstico. Leva cerca de 2 minutos.</p>
+    <form id="lead-form" class="mt-8 grid sm:grid-cols-2 gap-4" novalidate>
+      <div><label class="lbl" for="nome">Nome</label><input id="nome" name="nome" required autocomplete="name" class="field"></div>
+      <div><label class="lbl" for="empresa">Empresa</label><input id="empresa" name="empresa" required autocomplete="organization" class="field"></div>
+      <div><label class="lbl" for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" required type="tel" inputmode="tel" autocomplete="tel" placeholder="(47) 99999-9999" class="field"></div>
+      <div><label class="lbl" for="email">E-mail</label><input id="email" name="email" required type="email" autocomplete="email" class="field"></div>
+      <div><label class="lbl" for="cidade">Cidade</label><input id="cidade" name="cidade" required autocomplete="address-level2" class="field"></div>
+      <div><label class="lbl" for="estado">Estado</label><select id="estado" name="estado" required class="field"><option value="">Selecione</option></select></div>
+      <div><label class="lbl" for="leads_aprox">Quantidade aproximada de leads</label><input id="leads_aprox" name="leads_aprox" required type="number" min="0" inputmode="numeric" class="field"></div>
+      <div><label class="lbl" for="propostas_aprox">Quantidade aproximada de propostas</label><input id="propostas_aprox" name="propostas_aprox" required type="number" min="0" inputmode="numeric" class="field"></div>
+      <div><label class="lbl" for="ticket_medio">Ticket médio (R$)</label><input id="ticket_medio" name="ticket_medio" required type="number" min="0" inputmode="numeric" class="field"></div>
+      <div><label class="lbl" for="crm">CRM utilizado</label><select id="crm" name="crm" required class="field"><option value="">Selecione</option><option>Nenhum (planilha)</option><option>RD Station</option><option>Pipedrive</option><option>HubSpot</option><option>Bitrix24</option><option>Kommo</option><option>Outro</option></select></div>
+      <div class="sm:col-span-2"><label class="lbl" for="problema">Principal problema comercial</label><select id="problema" name="problema" required class="field"><option value="">Selecione</option><option>Propostas paradas sem follow-up</option><option>Clientes travados em financiamento</option><option>Perdas por preço ou concorrência</option><option>Leads caros e pouco qualificados</option><option>Time comercial sem processo ou sem tempo</option><option>Outro</option></select></div>
+      <div class="hidden" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></div>
+      <label class="sm:col-span-2 flex gap-3 text-sm text-mute items-start"><input type="checkbox" name="consent" required class="mt-1 h-5 w-5 shrink-0 accent-green-500"><span>Concordo em ser contatado sobre o diagnóstico solicitado.</span></label>
+      <button id="submit-btn" type="submit" class="btn-p sm:col-span-2">ENVIAR DIAGNÓSTICO</button>
+      <p id="form-msg" role="status" aria-live="polite" class="sm:col-span-2 text-sm min-h-[1.5rem]"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="border-t border-line">
+  <div class="max-w-5xl mx-auto px-5 py-8 text-xs text-mute space-y-2">
+    <p>Solar Revenue Recovery. Para encerrar o contato ou pedir a exclusão dos seus dados, responda “PARAR” ou escreva para o e-mail informado no diagnóstico.</p>
+    <p>Aviso: valores e cálculos desta página são simulações e não garantem resultado. O desempenho depende da qualidade da base, da oferta e da operação comercial de cada empresa. A adequação de cada campanha à LGPD e à legislação aplicável deve ser validada por profissional jurídico.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
